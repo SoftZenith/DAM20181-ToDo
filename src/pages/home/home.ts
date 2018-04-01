@@ -11,12 +11,14 @@ export class HomePage {
   tarea: string;
 
   constructor(public navCtrl: NavController) {
-
+    this.tarea = "";
   }
 
   agregar(){
-    this.tareas.push(this.tarea);
-    this.tarea = "";
+    if(this.tarea != "" && this.tarea.trim.length == 0){
+      this.tareas.push(this.tarea);
+      this.tarea = "";
+    }
   }
 
   borrar(elemento){
