@@ -1,14 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      To Do
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-item>
+    <ion-input [(ngModel)]="tarea" placeholder="Actividad por hacer" type="text" ></ion-input>
+  </ion-item>
+
+  <button ion-button full (click)="agregar()">Agregar</button>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let t of tareas">
+      <ion-item>
+        {{t}}
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="borrar(t)">
+          <ion-icon name="trash"> </ion-icon> Borrar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
