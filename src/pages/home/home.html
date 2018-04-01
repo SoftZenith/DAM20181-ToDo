@@ -16,11 +16,14 @@
   <ion-list>
     <ion-item-sliding *ngFor="let t of tareas">
       <ion-item>
-        {{t}}
+          <div [innerHtml]="t"></div>
       </ion-item>
       <ion-item-options side="right">
         <button ion-button color="danger" (click)="borrar(t)">
           <ion-icon name="trash"> </ion-icon> Borrar
+        </button>
+        <button ion-button color="green" (click)="completar(t)">
+          <ion-icon name="checkmark"> </ion-icon> Hecho
         </button>
       </ion-item-options>
     </ion-item-sliding>

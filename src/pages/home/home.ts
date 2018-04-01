@@ -28,4 +28,10 @@ export class HomePage {
     }
   }
 
+  completar(elemento: string){
+    var t = elemento.strike();
+    this.borrar(elemento);
+    this.tareas.push(t);
+  }
+
 }
